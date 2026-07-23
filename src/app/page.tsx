@@ -9,6 +9,7 @@ import {
 import { categories, contracts, stats, testimonials } from "@/lib/data";
 import ContractCard from "@/components/ContractCard";
 import CategoryCard from "@/components/CategoryCard";
+import FabricSwatch from "@/components/FabricSwatch";
 
 const featuredContracts = categories
   .slice(0, 3)
@@ -46,7 +47,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-slate-800">
+      <section className="relative overflow-hidden border-b border-slate-800 bg-weave">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.12),_transparent_55%)]" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
@@ -79,9 +80,23 @@ export default function Home() {
                 Request a fleet quote
               </Link>
             </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-dashed border-slate-800 pt-6">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Fabrics our machines test
+              </span>
+              {categories.slice(0, 5).map((category) => (
+                <FabricSwatch
+                  key={category.slug}
+                  color={category.swatchColor}
+                  label={category.swatchFabric}
+                  size="sm"
+                />
+              ))}
+            </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 gap-6 border-t border-slate-800 pt-10 sm:grid-cols-4">
+          <div className="mt-16 grid grid-cols-2 gap-6 stitch-divider border-slate-800 pt-10 sm:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className="text-2xl font-extrabold text-white sm:text-3xl">
@@ -122,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* Why us */}
-      <section className="border-y border-slate-800 bg-slate-900/40">
+      <section className="border-y border-slate-800 bg-slate-900/40 bg-weave">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">
             Why labs choose TexTest Support

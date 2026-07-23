@@ -4,7 +4,7 @@ import { categories } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 text-slate-300">
+    <footer className="border-t border-slate-800 bg-slate-950 bg-weave text-slate-300">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <Link href="/" className="flex items-center gap-2 text-white">
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+      <div className="stitch-divider border-slate-800 py-6 text-center text-xs text-slate-500">
         This is a demo storefront. All products, pricing, and companies shown
         are fictional. &copy; {new Date().getFullYear()} TexTest Support.
       </div>

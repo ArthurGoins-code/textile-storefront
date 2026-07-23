@@ -6,6 +6,8 @@ export interface MachineCategory {
   shortName: string;
   description: string;
   icon: string;
+  swatchColor: string;
+  swatchFabric: string;
 }
 
 export interface SupportContract {

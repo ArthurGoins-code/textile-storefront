@@ -5,6 +5,7 @@ import { contracts, getCategory, getContract, getContractsByCategory } from "@/l
 import { formatPrice } from "@/lib/format";
 import { getIcon } from "@/lib/icons";
 import AddToCartButton from "@/components/AddToCartButton";
+import MachineIllustration from "@/components/MachineIllustration";
 import { clsx } from "clsx";
 
 interface ContractPageProps {
@@ -48,7 +49,12 @@ export default async function ContractDetailPage({ params }: ContractPageProps) 
 
       <div className="mt-6 grid grid-cols-1 gap-12 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <div className="flex items-center gap-3">
+          <MachineIllustration
+            slug={contract.categorySlug}
+            className="h-40 w-full overflow-hidden rounded-2xl text-slate-700 sm:h-48"
+          />
+
+          <div className="mt-6 flex items-center gap-3">
             <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400/10 text-amber-400">
               <Icon className="h-6 w-6" />
             </span>

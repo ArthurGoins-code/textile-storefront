@@ -16,3 +16,50 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Fabric theming utilities */
+.bg-weave {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.035) 0,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.035) 0,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+}
+
+.bg-weave-warm {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(251, 191, 36, 0.06) 0,
+      rgba(251, 191, 36, 0.06) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(251, 191, 36, 0.06) 0,
+      rgba(251, 191, 36, 0.06) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+}
+
+.stitch-border {
+  border-style: dashed;
+  border-width: 1.5px;
+}
+
+.stitch-divider {
+  border-top-style: dashed;
+  border-top-width: 2px;
+}

@@ -14,6 +14,8 @@ export const categories: MachineCategory[] = [
     description:
       "Universal testing machines used to measure fabric and yarn tensile strength, elongation, and seam slippage.",
     icon: "Gauge",
+    swatchColor: "#8a6a45",
+    swatchFabric: "Woven canvas & webbing",
   },
   {
     slug: "abrasion-pilling",
@@ -22,6 +24,8 @@ export const categories: MachineCategory[] = [
     description:
       "Martindale-style abrasion and pilling testers used to evaluate fabric durability and surface wear.",
     icon: "RotateCw",
+    swatchColor: "#52525b",
+    swatchFabric: "Brushed knit fleece",
   },
   {
     slug: "colour-fastness",
@@ -30,6 +34,8 @@ export const categories: MachineCategory[] = [
     description:
       "Crockmeters and light/wash fastness chambers used to assess dye transfer and colour stability.",
     icon: "Palette",
+    swatchColor: "#a3123a",
+    swatchFabric: "Dyed cotton poplin",
   },
   {
     slug: "air-permeability",
@@ -38,6 +44,8 @@ export const categories: MachineCategory[] = [
     description:
       "Precision airflow instruments used to measure fabric breathability for technical and outdoor textiles.",
     icon: "Wind",
+    swatchColor: "#1d4ed8",
+    swatchFabric: "Ripstop nylon shell",
   },
   {
     slug: "gsm-weight",
@@ -46,6 +54,8 @@ export const categories: MachineCategory[] = [
     description:
       "Round sample cutters and precision balances used to determine fabric weight per unit area.",
     icon: "Scale",
+    swatchColor: "#0f6b52",
+    swatchFabric: "Nonwoven interlining",
   },
   {
     slug: "bursting-strength",
@@ -54,6 +64,8 @@ export const categories: MachineCategory[] = [
     description:
       "Hydraulic and pneumatic burst testers used to measure fabric and nonwoven rupture resistance.",
     icon: "Activity",
+    swatchColor: "#7c4a12",
+    swatchFabric: "Technical nonwovens",
   },
   {
     slug: "flammability",
@@ -62,6 +74,8 @@ export const categories: MachineCategory[] = [
     description:
       "Vertical and horizontal flame chambers used for safety-critical flammability compliance testing.",
     icon: "Flame",
+    swatchColor: "#b45309",
+    swatchFabric: "Flame-retardant twill",
   },
 ];
 

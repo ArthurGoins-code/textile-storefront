@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Check, Clock, Wrench } from "lucide-react";
 import type { SupportContract } from "@/lib/types";
 import { formatPrice } from "@/lib/format";
+import { getCategory } from "@/lib/data";
+import FabricSwatch from "@/components/FabricSwatch";
 import { clsx } from "clsx";
 
 const tierStyles: Record<string, string> = {
@@ -11,11 +13,13 @@ const tierStyles: Record<string, string> = {
 };
 
 export default function ContractCard({ contract }: { contract: SupportContract }) {
+  const category = getCategory(contract.categorySlug);
+
   return (
     <div
       className={clsx(
         "flex flex-col rounded-2xl border bg-slate-900 p-6 shadow-sm transition-shadow hover:shadow-lg",
-        contract.popular ? "border-amber-400/60" : "border-slate-800",
+        contract.popular ? "stitch-border border-amber-400/60" : "border-slate-800",
       )}
     >
       {contract.popular && (
@@ -24,14 +28,19 @@ export default function ContractCard({ contract }: { contract: SupportContract }
         </span>
       )}
 
-      <span
-        className={clsx(
-          "mb-2 inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-semibold",
-          tierStyles[contract.tier],
+      <div className="flex items-center justify-between">
+        <span
+          className={clsx(
+            "mb-2 inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-semibold",
+            tierStyles[contract.tier],
+          )}
+        >
+          {contract.tier}
+        </span>
+        {category && (
+          <FabricSwatch color={category.swatchColor} label={category.swatchFabric} size="sm" />
         )}
-      >
-        {contract.tier}
-      </span>
+      </div>
 
       <h3 className="text-lg font-bold text-white">{contract.name}</h3>
       <p className="mt-1 text-sm text-slate-400">{contract.tagline}</p>
