@@ -7,9 +7,9 @@ import FabricSwatch from "@/components/FabricSwatch";
 import { clsx } from "clsx";
 
 const tierStyles: Record<string, string> = {
-  Essential: "bg-slate-800 text-slate-200",
-  Standard: "bg-amber-400/20 text-amber-300",
-  Premium: "bg-emerald-400/20 text-emerald-300",
+  Essential: "bg-slate-100 text-slate-700",
+  Standard: "bg-amber-100 text-amber-700",
+  Premium: "bg-emerald-100 text-emerald-700",
 };
 
 export default function ContractCard({ contract }: { contract: SupportContract }) {
@@ -18,8 +18,8 @@ export default function ContractCard({ contract }: { contract: SupportContract }
   return (
     <div
       className={clsx(
-        "flex flex-col rounded-2xl border bg-slate-900 p-6 shadow-sm transition-shadow hover:shadow-lg",
-        contract.popular ? "stitch-border border-amber-400/60" : "border-slate-800",
+        "flex flex-col rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-lg",
+        contract.popular ? "stitch-border border-amber-400/60" : "border-slate-200",
       )}
     >
       {contract.popular && (
@@ -42,32 +42,32 @@ export default function ContractCard({ contract }: { contract: SupportContract }
         )}
       </div>
 
-      <h3 className="text-lg font-bold text-white">{contract.name}</h3>
-      <p className="mt-1 text-sm text-slate-400">{contract.tagline}</p>
+      <h3 className="text-lg font-bold text-slate-900">{contract.name}</h3>
+      <p className="mt-1 text-sm text-slate-500">{contract.tagline}</p>
 
       <div className="mt-4 flex items-baseline gap-1">
-        <span className="text-3xl font-extrabold text-white">
+        <span className="text-3xl font-extrabold text-slate-900">
           {formatPrice(contract.price)}
         </span>
-        <span className="text-sm text-slate-400">/ year</span>
+        <span className="text-sm text-slate-500">/ year</span>
       </div>
 
-      <div className="mt-4 flex flex-col gap-2 text-sm text-slate-300">
+      <div className="mt-4 flex flex-col gap-2 text-sm text-slate-600">
         <div className="flex items-center gap-2">
-          <Clock className="h-4 w-4 text-amber-400" />
+          <Clock className="h-4 w-4 text-amber-600" />
           {contract.responseTime} response
         </div>
         <div className="flex items-center gap-2">
-          <Wrench className="h-4 w-4 text-amber-400" />
+          <Wrench className="h-4 w-4 text-amber-600" />
           {contract.calibrationVisits} calibration visit
           {contract.calibrationVisits > 1 ? "s" : ""}/year
         </div>
       </div>
 
-      <ul className="mt-4 flex-1 space-y-2 text-sm text-slate-300">
+      <ul className="mt-4 flex-1 space-y-2 text-sm text-slate-600">
         {contract.features.slice(0, 4).map((feature) => (
           <li key={feature} className="flex items-start gap-2">
-            <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-400" />
+            <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600" />
             <span>{feature}</span>
           </li>
         ))}
@@ -75,7 +75,7 @@ export default function ContractCard({ contract }: { contract: SupportContract }
 
       <Link
         href={`/contracts/${contract.slug}`}
-        className="mt-6 inline-flex items-center justify-center rounded-lg bg-amber-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-300"
+        className="mt-6 inline-flex items-center justify-center rounded bg-amber-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-300"
       >
         View plan details
       </Link>

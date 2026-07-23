@@ -25,16 +25,16 @@ const values = [
 export default function AboutPage() {
   return (
     <div>
-      <section className="border-b border-slate-800 bg-slate-900/40">
+      <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-300">
+          <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
             <Building2 className="h-3.5 w-3.5" />
             About TexTest Support
           </span>
-          <h1 className="mt-6 text-3xl font-extrabold text-white sm:text-4xl">
+          <h1 className="mt-6 text-3xl font-extrabold text-slate-900 sm:text-4xl">
             We keep textile testing labs running, so quality never waits.
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+          <p className="mx-auto mt-4 max-w-2xl text-slate-500">
             TexTest Support was founded by former lab technicians who were
             tired of watching calibration deadlines slip and machines sit
             idle waiting on parts. Today we support fleets of tensile
@@ -48,30 +48,30 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-2xl font-extrabold text-white sm:text-3xl">
+              <div className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
                 {stat.value}
               </div>
-              <div className="mt-1 text-sm text-slate-400">{stat.label}</div>
+              <div className="mt-1 text-sm text-slate-500">{stat.label}</div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-slate-800 bg-slate-900/40">
+      <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
             What we believe
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
             {values.map((value) => (
               <div key={value.title}>
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400/10 text-amber-400">
+                <span className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-50 text-amber-600">
                   <value.icon className="h-6 w-6" />
                 </span>
-                <h3 className="mt-4 text-base font-bold text-white">
+                <h3 className="mt-4 text-base font-bold text-slate-900">
                   {value.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-400">{value.description}</p>
+                <p className="mt-2 text-sm text-slate-500">{value.description}</p>
               </div>
             ))}
           </div>

@@ -20,7 +20,7 @@ export default function FabricSwatch({ color, label, size = "md" }: FabricSwatch
         }}
         aria-hidden
       />
-      <span className="text-xs text-slate-400">{label}</span>
+      <span className="text-xs text-slate-500">{label}</span>
     </div>
   );
 }

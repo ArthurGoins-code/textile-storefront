@@ -41,10 +41,10 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="max-w-3xl">
-        <h1 className="text-3xl font-extrabold text-white sm:text-4xl">
+        <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
           Support plans
         </h1>
-        <p className="mt-3 text-slate-400">
+        <p className="mt-3 text-slate-500">
           Compare Essential, Standard, and Premium care plans for every
           textile testing machine category. Every plan includes calibration,
           software updates, and on-site repair coverage.
@@ -59,8 +59,8 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
             className={clsx(
               "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
               !activeCategory
-                ? "border-amber-400 bg-amber-400/10 text-amber-300"
-                : "border-slate-700 text-slate-300 hover:border-amber-400 hover:text-amber-400",
+                ? "border-amber-400 bg-amber-50 text-amber-700"
+                : "border-slate-300 text-slate-600 hover:border-amber-400 hover:text-amber-600",
             )}
           >
             All machines
@@ -72,8 +72,8 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
               className={clsx(
                 "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
                 activeCategory === category.slug
-                  ? "border-amber-400 bg-amber-400/10 text-amber-300"
-                  : "border-slate-700 text-slate-300 hover:border-amber-400 hover:text-amber-400",
+                  ? "border-amber-400 bg-amber-50 text-amber-700"
+                  : "border-slate-300 text-slate-600 hover:border-amber-400 hover:text-amber-600",
               )}
             >
               {category.shortName}
@@ -87,8 +87,8 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
             className={clsx(
               "rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide transition-colors",
               !activeTier
-                ? "bg-slate-100 text-slate-900"
-                : "bg-slate-800 text-slate-300 hover:bg-slate-700",
+                ? "bg-slate-900 text-white"
+                : "bg-slate-100 text-slate-600 hover:bg-slate-200",
             )}
           >
             All tiers
@@ -100,8 +100,8 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
               className={clsx(
                 "rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide transition-colors",
                 activeTier === tier
-                  ? "bg-slate-100 text-slate-900"
-                  : "bg-slate-800 text-slate-300 hover:bg-slate-700",
+                  ? "bg-slate-900 text-white"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200",
               )}
             >
               {tier}
@@ -117,7 +117,7 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
           return (
             <div key={category.slug}>
               {!activeCategory && (
-                <h2 className="text-xl font-bold text-white">{category.name}</h2>
+                <h2 className="text-xl font-bold text-slate-900">{category.name}</h2>
               )}
               <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {items.map((contract) => (
@@ -129,9 +129,9 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
         })}
 
         {filtered.length === 0 && (
-          <p className="text-slate-400">
+          <p className="text-slate-500">
             No plans match those filters yet. Try clearing a filter or{" "}
-            <Link href="/contact" className="text-amber-400 underline">
+            <Link href="/contact" className="text-amber-600 underline">
               contact us
             </Link>{" "}
             about your machine.

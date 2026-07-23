@@ -17,23 +17,23 @@ export default function AddToCartButton({ contractId }: { contractId: string }) 
 
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-      <div className="flex items-center gap-3 rounded-lg border border-slate-700 px-3 py-2">
+      <div className="flex items-center gap-3 rounded border border-slate-300 px-3 py-2">
         <button
           type="button"
           aria-label="Decrease quantity"
           onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-          className="text-slate-300 hover:text-amber-400"
+          className="text-slate-600 hover:text-amber-600"
         >
           <Minus className="h-4 w-4" />
         </button>
-        <span className="w-6 text-center text-sm font-semibold text-white">
+        <span className="w-6 text-center text-sm font-semibold text-slate-900">
           {quantity}
         </span>
         <button
           type="button"
           aria-label="Increase quantity"
           onClick={() => setQuantity((q) => q + 1)}
-          className="text-slate-300 hover:text-amber-400"
+          className="text-slate-600 hover:text-amber-600"
         >
           <Plus className="h-4 w-4" />
         </button>
@@ -42,7 +42,7 @@ export default function AddToCartButton({ contractId }: { contractId: string }) 
       <button
         type="button"
         onClick={handleAdd}
-        className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-amber-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-300"
+        className="inline-flex flex-1 items-center justify-center gap-2 rounded bg-amber-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-300"
       >
         <ShoppingCart className="h-4 w-4" />
         {added ? "Added to cart!" : "Add to cart"}
