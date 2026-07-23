@@ -23,8 +23,8 @@ export default async function ContractsPage({ searchParams }: ContractsPageProps
 
   function buildHref(next: { category?: string; tier?: string }) {
     const query = new URLSearchParams();
-    const category = next.category !== undefined ? next.category : activeCategory;
-    const tier = next.tier !== undefined ? next.tier : activeTier;
+    const category = "category" in next ? next.category : activeCategory;
+    const tier = "tier" in next ? next.tier : activeTier;
     if (category) query.set("category", category);
     if (tier) query.set("tier", tier);
     const qs = query.toString();
